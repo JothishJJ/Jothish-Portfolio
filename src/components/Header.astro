@@ -5,7 +5,7 @@ import { SITE_TITLE } from '../consts';
 
 <header class="rounded-full px-8">
 	<nav>
-		<h2 class="font-semibold"><a href="/">{SITE_TITLE}</a></h2>
+		<h2 class="font-semibold"><a class="green-text" href="/">{SITE_TITLE}</a></h2>
 		<div class="internal-links space-x-8">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
@@ -13,14 +13,19 @@ import { SITE_TITLE } from '../consts';
 		</nav>
 </header>
 <style>
+	.green-text {
+		color: theme("textColor.green.800") !important;
+	}
+
 	header {
 		position: fixed;
 		top: 0;
 		left: 0;
 		right: 0;
-		background: white;
 		margin: 0 20rem;
 		margin-top: 2rem;
+		background-color: rgba(240, 255, 240, 0.9);
+		backdrop-filter: blur(10px);
 	}
 	h2 {
 		margin: 0;
@@ -37,6 +42,9 @@ import { SITE_TITLE } from '../consts';
 		color: #000;
 		border-bottom: 4px solid transparent;
 		text-decoration: none;
+	}
+	nav a:hover {
+		color: #404040;
 	}
 	nav a.active {
 		text-decoration: none;

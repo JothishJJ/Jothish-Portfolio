@@ -68,10 +68,11 @@ b {
 	font-weight: 700;
 }
 a {
-	 @apply text-green-500;
-}
-a:hover {
 	color: var(--accent);
+}
+
+a:hover {
+	color: theme("textColor.green.700")
 }
 p {
 	margin-bottom: 1em;
