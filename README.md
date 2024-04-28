@@ -44,3 +44,18 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `pnpm run astro -- --help` | Get help using the Astro CLI                     |
 
+## Contribution
+
+First Fork this project, and then clone this repo
+
+```sh
+git clone <this-repo>
+```
+
+Then install the dependencies using pnpm, and then and run the development server using the following command,
+
+```sh
+pnpm install
+pnpm run dev # Runs the dev server on PORT: 4321
+```
+
