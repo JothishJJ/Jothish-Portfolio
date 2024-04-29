@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
+
 :root {
 	--accent: theme('textColor.green.500');
 	--accent-dark: #000d8a;
@@ -38,6 +40,9 @@ main {
 	max-width: calc(100% - 2em);
 	margin: auto;
 	padding: 3em 1em;
+}
+main.home {
+	width: auto;
 }
 h1,
 h2,

@@ -12,8 +12,60 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	</head>
 	<body>
 		<Header />
-		<main class="mt-20 min-h-screen">
-			<h1 class="text-center">Hi, I'm Jothish JJ. Software Engineer</h1>
+		<style>
+			.handsome-image {
+				overflow: hidden;
+				border-radius: 1rem;
+				z-index: 20;
+			}
+			.handsome-image:hover img {
+				transform: scale(1.15);
+			}
+			.attributes div.hovering {
+				z-index: -1;
+				position: absolute;
+				transform-origin: 0 0;
+				transform: translate(8rem, 4rem)
+			}
+			.attributes:hover div.hovering {
+				transform: translate(28rem, -5rem) rotate(22deg);
+			}
+
+		</style>
+		<main class="home mt-20">
+			<!-- Hero Section -->
+			<section class="min-h-[50vh] my-32 flex flex-col items-center justify-center 2xl:mx-72 xl:mx-32 lg:mx-20 mx-4">
+				<h1>Hi, I'm Jothish JJ</h1>
+				<h4>I can trade code for 💸</h4>
+			</section>
+
+			<!-- About me section -->
+			<section class="pt-20 2xl:mx-72 xl:mx-32 lg:mx-20 mx-4">
+				<h2>About Me</h2>
+				<div class="grid lg:grid-cols-2 grid-cols-1 gap-16 mt-6">
+					<div class="lg:relative attributes transition 2xl:w-[500px] lg:w-[450px]">
+						<div class="hidden hovering transition lg:flex  w-full gap-1">
+							<img src="/arrow-icon.png" alt="Arrow Icon"  width="70px" height="10px" />
+							<p class="font-cursive  text-4xl  w-full">Handsome</p>
+						</div>
+						<div class="handsome-image">
+							<img class="transition z-50" src="/Jothish Handsome.jpg" alt="Jothish is handsome" width="500px">
+						</div>
+					</div>
+					<div class="flex flex-col justify-center gap-6">
+						<p>
+							I'm Jothish JJ. I am a 16-year-old programmer, I am passionate about software engineering.
+							As a software engineer, my passion lies in the art of problem-solving and the thrill of bringing ideas to life through code. 
+							My journey began with a curiosity to create, leading me through various realms of software development.
+						</p>
+						<p>
+							In every project I undertake, my goal is clear: to create something useful for others. I believe that software should not only 
+							address a need but also enhance the lives of its users. By prioritizing functionality and usability, I strive to deliver 
+							applications that not only meet expectations but exceed them.
+						</p>
+					</div>
+				</div>
+			</section>
 		</main>
 		<Footer />
 	</body>
