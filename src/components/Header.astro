@@ -44,4 +44,18 @@ import { SITE_TITLE } from '../consts';
 		text-decoration: none;
 		border-bottom-color: theme('borderColor.green.500');
 	}
+
+
+	@media (prefers-color-scheme: dark) {
+		header {
+			background-color: rgba(38, 38, 38, 0.8);
+		}
+
+		nav a {
+			color: theme('textColor.neutral.50')
+		}
+		nav a:hover {
+			color: theme("textColor.neutral.200")
+		}
+	}
 </style>
