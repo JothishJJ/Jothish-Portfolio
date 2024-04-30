@@ -12,7 +12,7 @@ const posts = (await getCollection('blog')).sort(
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
@@ -90,11 +90,9 @@ const posts = (await getCollection('blog')).sort(
 				transform: scale(1.2);
 			}
 
-			@media (prefers-color-scheme: dark) {
-				ul li a:hover h4,
-				ul li a:hover .date {
-					color: theme('textColor.neutral.400');
-				}
+			html.dark ul li a:hover h4,
+			ul li a:hover .date {
+				color: theme('textColor.neutral.400');
 			}
 		</style>
 	</head>

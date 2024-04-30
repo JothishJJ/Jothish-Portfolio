@@ -2,7 +2,7 @@
 const today = new Date();
 ---
 
-<footer>
+<footer class="dark:bg-[#101010]">
 	&copy; {today.getFullYear()} Jothish JJ. All rights reserved.
 	<div class="social-links">
 		<a href="https://twitter.com/jothish_jj" target="_blank">
@@ -33,11 +33,8 @@ const today = new Date();
 		text-align: center;
 	}
 
-
-	@media (prefers-color-scheme: dark) {
-		footer {
-			background: #101010;
-		}
+	html.dark footer {
+		background: #101010;
 	}
 
 	.social-links {

@@ -147,14 +147,20 @@ hr {
 	white-space: nowrap;
 }
 
-@media (prefers-color-scheme: dark) {
-	body {
-		background: none;
-		background-color: #202020;
-		color: theme("textColor.neutral.300")
-	}
-
-	h1, h2, h3, h4, h5, h6 {
-		color: theme("textColor.neutral.50")
-	}
+html.dark body {
+	background: #202020;
 }
+
+body {
+	@apply dark:text-neutral-300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply dark:text-neutral-50;
+}
+

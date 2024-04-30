@@ -3,7 +3,7 @@ import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 ---
 
-<header class="rounded-full z-50 px-8 border-[1px] border-black m-8 2xl:mx-72 xl:mx-32 lg:20 md:8">
+<header class="rounded-full z-50 px-8  border-[1px] border-black m-8 2xl:mx-72 xl:mx-32 lg:20 md:8">
 	<nav>
 		<h2 class="font-semibold"><a class="green-text" href="/">{SITE_TITLE}</a></h2>
 		<div class="internal-links space-x-8">
@@ -45,17 +45,14 @@ import { SITE_TITLE } from '../consts';
 		border-bottom-color: theme('borderColor.green.500');
 	}
 
+	html.dark header {
+		background-color: rgba(38, 38, 38, 0.8);
+	}
 
-	@media (prefers-color-scheme: dark) {
-		header {
-			background-color: rgba(38, 38, 38, 0.8);
-		}
-
-		nav a {
-			color: theme('textColor.neutral.50')
-		}
-		nav a:hover {
-			color: theme("textColor.neutral.200")
-		}
+	html.dark nav a {
+		color: theme('textColor.neutral.50')
+	}
+	html.dark nav a:hover {
+		color: theme("textColor.neutral.200")
 	}
 </style>
