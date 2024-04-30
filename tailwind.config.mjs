@@ -4,7 +4,7 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				cursive: ["Sedgwick Ave Display", "cursive"],
+				cursive: ["Gloria Hallelujah", "cursive"],
 			},
 
 		},

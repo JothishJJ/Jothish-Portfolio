@@ -21,16 +21,42 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			.handsome-image:hover img {
 				transform: scale(1.15);
 			}
+
 			.attributes div.hovering {
 				z-index: -1;
 				position: absolute;
 				transform-origin: 0 0;
-				transform: translate(8rem, 4rem)
+				transition-duration: 0.4s;
+				transform: translate(8rem, 4rem);
+				transition-timing-function: cubic-bezier(.47,-0.01,.17,1);
 			}
 			.attributes:hover div.hovering {
 				transform: translate(28rem, -5rem) rotate(22deg);
 			}
 
+			.attributes div.hovering-1 {
+				z-index: -1;
+				position: absolute;
+				transform-origin: 0 0;
+				transition-duration: 0.75s;
+				transform: translate(-4rem, -4rem);
+				transition-timing-function: cubic-bezier(.47,-0.01,.17,1);
+			}
+			.attributes:hover div.hovering-1 {
+				transform: translate(-18rem, -7rem) rotate(22deg);
+			}
+
+			.attributes div.hovering-2 {
+				z-index: -1;
+				position: absolute;
+				transition-duration: 1s;
+				transform-origin: 0 0;
+				transform: translateY(12rem);
+				transition-timing-function: cubic-bezier(.47,-0.01,.17,1);
+			}
+			.attributes:hover div.hovering-2 {
+				transform: translate(-20rem, 12rem);
+			}
 		</style>
 		<main class="home mt-20">
 			<!-- Hero Section -->
@@ -48,8 +74,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 							<img src="/arrow-icon.png" alt="Arrow Icon"  width="70px" height="10px" />
 							<p class="font-cursive  text-4xl  w-full">Handsome</p>
 						</div>
+						<div class="hidden transition hovering-2 lg:flex justify-center items-center w-full gap-1">
+							<p class="font-cursive text-4xl m-0">Smart</p>
+						</div>
 						<div class="handsome-image">
 							<img class="transition z-50" src="/Jothish Handsome.jpg" alt="Jothish is handsome" width="500px">
+						</div>
+						<div class="hidden transition hovering-1 lg:flex justify-center items-center w-full gap-1">
+							<p class="font-cursive  text-4xl m-0">10x Dev</p>
+							<img class="-rotate-180 inline-block -translate-y-4" src="/arrow-icon.png" alt="Arrow Icon"  width="70px" height="10px" />
 						</div>
 					</div>
 					<div class="flex flex-col justify-center gap-6">
