@@ -2,11 +2,12 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Theme from '../components/Theme.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
@@ -102,5 +103,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			<!-- TODO: Make the Projects Section -->
 		</main>
 		<Footer />
+		<Theme />
 	</body>
 </html>

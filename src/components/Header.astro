@@ -3,21 +3,18 @@ import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 ---
 
-<header class="rounded-full z-50 px-8  border-[1px] border-black m-8 2xl:mx-72 xl:mx-32 lg:20 md:8">
-	<nav>
+<header class="fixed top-0 left-0 right-0 rounded-full z-50 px-8  border-[1px] border-black m-8 2xl:mx-72 xl:mx-32 lg:20 md:8">
+	<nav class="flex justify-between items-center p-4">
 		<h2 class="font-semibold"><a class="green-text" href="/">{SITE_TITLE}</a></h2>
 		<div class="internal-links space-x-8">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
+			<button class="inline" id="theme-switch">Big boy</button>
 		</div>
 		</nav>
 </header>
 <style>
 	header {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
 		background-color: rgba(240, 255, 240, 0.8);
 		backdrop-filter: blur(10px);
 	}
@@ -26,12 +23,6 @@ import { SITE_TITLE } from '../consts';
 		font-size: 1em;
 	}
 
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 1rem;
-	}
 	nav a {
 		color: #000;
 		border-bottom: 4px solid transparent;
@@ -56,3 +47,15 @@ import { SITE_TITLE } from '../consts';
 		color: theme("textColor.neutral.200")
 	}
 </style>
+<script>
+	const btn = document.getElementById("theme-switch")
+	btn?.addEventListener("click", () => {
+		if(document.documentElement.classList.contains("dark")) {
+			document.documentElement.classList.remove("dark")
+			localStorage.setItem('theme', 'light')
+		} else {
+			document.documentElement.classList.add("dark")
+			localStorage.setItem('theme', 'dark')
+		}
+	})
+</script>

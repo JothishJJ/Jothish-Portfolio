@@ -6,7 +6,7 @@
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
 	--gray-dark: 34, 41, 57;
-	--green-gradient: rgba(187, 247, 208, 50%), #fff;
+	--green-gradient: rgba(187, 247, 208, 50%), #fefefe;
 }
 @font-face {
 	font-family: 'Atkinson';
@@ -149,6 +149,10 @@ hr {
 
 html.dark body {
 	background: #202020;
+}
+
+html.dark code {
+	background: #404040;
 }
 
 body {
