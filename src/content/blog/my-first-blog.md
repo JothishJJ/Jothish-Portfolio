@@ -3,7 +3,7 @@ title: My first Blog
 description: 'My Blogging website is amaizing.'
 pubDate: 'Apr 28 2024'
 heroImage: '/blog-images/First Blog Image.webp'
-updatedDate: 'Apr 29 2024'
+updatedDate: 'May 1 2024'
 ---
 
 ## Blog
@@ -30,3 +30,6 @@ So, I've changed the image with an image generated form ChatGPT. I think I've do
 ## Update 
 
 This is interesting, after viewing the site with a fresh pair of eyes, I can now see that the website looks terible, so today's goal will be just that and I think I can do a pretty job of it.
+
+I almost finished the blog, I don't know what to add, I will try to make this website look as good as possible and make it look like it's not made in 5 minutes. I actually reccommend people to do the same for their portfolio, and not just to make a portfolio just to make a portfolio, but spend a lot of time on it. It might take months but I think it will be worth it at the end.
+
