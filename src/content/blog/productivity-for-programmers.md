@@ -2,7 +2,7 @@
 title: Producitvity For Programmers
 description: 'The world of programming is an exciting adventure filled with challenges and opportunities.'
 pubDate: 'May 02 2024'
-heroImage: '/blog-images/First Blog Image.webp'
+heroImage: '/blog-images/productivity-for-programmers.png'
 ---
 
 This blog is going to talk about one of my favorite things when it comes to life productivity, 

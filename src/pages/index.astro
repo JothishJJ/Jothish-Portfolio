@@ -4,6 +4,14 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Theme from '../components/Theme.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+)
+// Get the latest 6 Blogs
+.slice(0, 6)
 ---
 
 <!doctype html>
@@ -100,7 +108,25 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 					</div>
 				</div>
 			</section>
+
+			<!-- Articles section -->
+			<section class="pt-20 2xl:mx-72 xl:mx-32 lg:mx-20 mx-4">
+				<h2>Articles I wrote recently</h2>
+				<div class="grid 2xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-8 p-8">
+					{posts.map(post => {
+						return (
+							<a 
+								href={`/blog/${post.slug}`}
+								class="text-neutral-800 hover:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-300 hover:shadow-2xl transition hover:-translate-y-4 border-[1px] border-neutral-900 dark:border-neutral-300 rounded-xl p-4 space-y-4">
+								<h5 class="text-center">{post.data.title}</h5>
+								<p class="line-clamp-3">{post.data.description}</p>
+							</a>
+						)
+					})}
+				</div>
+			</section>
 			<!-- TODO: Make the Projects Section -->
+			<!-- TODO: Make a Contact Me Section -->
 		</main>
 		<Footer />
 		<Theme />
