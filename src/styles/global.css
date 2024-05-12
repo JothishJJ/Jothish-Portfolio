@@ -22,6 +22,17 @@
 	font-style: normal;
 	font-display: swap;
 }
+
+/* Selection Text color */
+::-moz-selection { /* Code for Firefox */
+  color: theme("textColor.green.500");
+  background: theme("textColor.green.50");
+}
+::selection {
+  color: theme("textColor.green.500");
+  background: theme("textColor.green.50");
+}
+
 body {
 	font-family: 'Atkinson', sans-serif;
 	background: linear-gradient(var(--green-gradient)) no-repeat;
