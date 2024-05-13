@@ -166,6 +166,10 @@ html.dark code {
 	background: #404040;
 }
 
+html.dark pre code {
+	background: transparent;
+}
+
 body {
 	@apply dark:text-neutral-300;
 }
