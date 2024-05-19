@@ -3,6 +3,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Theme from '../components/Theme.astro';
+
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 import { getCollection } from 'astro:content';
@@ -126,7 +127,6 @@ const posts = (await getCollection('blog')).sort(
 				</div>
 			</section>
 			<!-- TODO: Make the Projects Section -->
-			<!-- TODO: Make a Contact Me Section -->
 		</main>
 		<Footer />
 		<Theme />

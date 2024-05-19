@@ -11,10 +11,12 @@ export const POST: APIRoute = async ({ request }) => {
         }
     });
 
-    const data = await request.formData()
+    const data = await request.formData();
     const name = data.get("name")
     const email = data.get("email")
     const message = data.get("message")
+
+    console.log(name)
 
     if (!name || !email || !message) {
         return new Response(
