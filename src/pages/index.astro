@@ -4,8 +4,6 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Theme from '../components/Theme.astro';
 
-const isProd = import.meta.env.MODE === "production";
-
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 import { getCollection } from 'astro:content';
@@ -21,17 +19,17 @@ const posts = (await getCollection('blog')).sort(
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<!-- Google Analytics -->
+		<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+		<script is:inline>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-XXXXXXXXXX');
+		</script>
 	</head>
 
-      <>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVP10MBWF2" is:inline></script>
-        <script is:inline>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-BVP10MBWF2');
-        </script>
-      </>
+
 
 	<body>
 		<Header />
