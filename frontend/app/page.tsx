@@ -18,8 +18,8 @@ export default async function IndexPage() {
     <main className="container mx-auto min-h-screen max-w-3xl p-8">
       <section className="min-h-[100svh] lg:flex justify-center items-center gap-2">
         <div>
-          <h1 className="text-6xl font-serif">Hi, I'm Jothish</h1>
-          <p>I'm really cool! and I'd love to work with you!</p>
+          <h1 className="text-6xl font-serif">Hi, I&apos;m Jothish</h1>
+          <p>I&apos;m really cool! and I&apos;d love to work with you!</p>
         </div>
         <div>
           <Image
