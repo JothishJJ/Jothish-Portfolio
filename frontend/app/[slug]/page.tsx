@@ -23,9 +23,21 @@ export async function generateMetadata({params}: {params: Promise<{slug: string}
     options,
   );
 
+  const authorDocs = await client.fetch<SanityDocument>(
+      `*[_id=="${post.author._ref}"]`);
+  const author = await authorDocs[0];
+
+  const authorImageUrl = author.image
+    ? urlFor(author.image)?.width(100).height(100).url()
+    : null;
+
+   
   return {
     title: post.title,
     description: post.body[0].children[1].text,
+    openGraph: {
+        images: [authorImageUrl] 
+    },
   }
 }
 
@@ -43,8 +55,8 @@ export default async function PostPage({
       `*[_id=="${post.author._ref}"]`);
   const author = await authorDocs[0];
 
-  const postImageUrl = post.image
-    ? urlFor(post.image)?.width(550).height(310).url()
+  const postImageUrl = post.mainImage
+    ? urlFor(post.mainImage)?.width(850).height(610).url()
     : null;
 
   const authorImageUrl = author.image
@@ -57,18 +69,20 @@ export default async function PostPage({
         ← Back to posts
       </Link>
       {postImageUrl && (
-        <Image
-          src={postImageUrl}
-          alt={post.title}
-          className="aspect-video rounded-xl"
-          width="550"
-          height="310"
-        />
+         <div className="flex flex-col items-center">
+            <Image
+              src={postImageUrl}
+              alt={post.title}
+              className="aspect-video rounded-xl"
+              width="550"
+              height="310"
+            />
+        </div>
       )}
       <h1 className="text-4xl font-bold">{post.title}</h1>
       <p className="text-sm">{new Date(post.publishedAt).toLocaleDateString()}</p>
       <div className="flex gap-4 items-center">
-          <Image src={authorImageUrl} alt={author.name} className="rounded-4xl" width="40" height="40" />
+          {authorImageUrl && <Image src={authorImageUrl} alt={author.name} className="rounded-4xl" width="40" height="40" />}
           <p className="text-sm">{author.name}</p>
       </div>
       <hr />

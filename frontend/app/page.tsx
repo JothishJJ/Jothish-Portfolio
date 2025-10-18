@@ -25,6 +25,7 @@ export default async function IndexPage() {
           <Image
             src="/Jothish Handsome.jpg"
             alt="A handsome guy"
+            className="rounded-xl"
             height="400"
             width="400"
           />
