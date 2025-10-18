@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  merge_group:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read # for checkout
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          cache: npm
+          node-version: lts/*
+      - run: npm ci
+      - run: npm run lint
+
+  test:
+    permissions:
+      # Required to checkout the code
+      contents: read
+      # Required to put a comment into the pull-request
+      pull-requests: write
+    name: Test
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        # Run the testing suite on each major OS with the latest LTS release of Node.js
+        os: [macos-latest, ubuntu-latest, windows-latest]
+        node-version: [20, 22, 24]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          cache: npm
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: cd test/integration; npm install
+      - run: npm test
+      - uses: vebr/jest-lcov-reporter@v0.2.1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          lcov-file: .tap/report/lcov.info

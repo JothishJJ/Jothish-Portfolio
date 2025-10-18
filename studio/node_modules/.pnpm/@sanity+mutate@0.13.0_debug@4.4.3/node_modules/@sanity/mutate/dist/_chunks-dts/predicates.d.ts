@@ -1,0 +1,20 @@
+import { AnyArray, FindInArray, KeyedPathElement, Path, PathElement, StringToPath } from "./types.js";
+type Get<P extends number | KeyedPathElement | Readonly<KeyedPathElement> | string, T> = T extends AnyArray ? P extends KeyedPathElement | Readonly<KeyedPathElement> | number ? FindInArray<P, T> : undefined : P extends keyof T ? T[P] : never;
+type GetAtPath<P extends readonly PathElement[], T> = P extends [] ? T : P extends [infer Head, ...infer Tail] ? Head extends PathElement ? Tail extends PathElement[] ? GetAtPath<Tail, Get<Head, T>> : undefined : undefined : undefined;
+declare function getAtPath<const Head extends PathElement, const T>(path: [head: Head], value: T): Get<Head, T>;
+declare function getAtPath<const Head extends PathElement, const Tail extends PathElement[], T>(path: [head: Head, ...tail: Tail], value: T): GetAtPath<[Head, ...Tail], T>;
+declare function getAtPath<T>(path: [], value: T): T;
+declare function getAtPath(path: Path, value: unknown): unknown;
+declare function parse<const T extends string>(path: T): StringToPath<T>;
+declare function stringify(pathArray: Path): string;
+declare function normalize(path: string | Readonly<Path>): Readonly<Path>;
+declare function startsWith(parentPath: Path, path: Path): boolean;
+declare function isEqual(path: Path, otherPath: Path): boolean;
+declare function isElementEqual(segmentA: PathElement, segmentB: PathElement): boolean;
+declare function isKeyElement(segment: PathElement): segment is KeyedPathElement;
+declare function isIndexElement(segment: PathElement): segment is number;
+declare function isKeyedElement(element: PathElement): element is KeyedPathElement;
+declare function isArrayElement(element: PathElement): element is KeyedPathElement | number;
+declare function isPropertyElement(element: PathElement): element is string;
+export { Get, GetAtPath, getAtPath, isArrayElement, isElementEqual, isEqual, isIndexElement, isKeyElement, isKeyedElement, isPropertyElement, normalize, parse, startsWith, stringify };
+//# sourceMappingURL=predicates.d.ts.map
