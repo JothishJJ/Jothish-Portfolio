@@ -26,14 +26,17 @@ body {
 }
 
 @layer base {
+  .prose {
+    @apply font-serif; 
+  }
   .prose h1 {
-    @apply text-4xl font-bold mt-8 mb-4;
+    @apply text-4xl font-bold mt-8 mb-4 font-sans;
   }
   .prose h2 {
-    @apply text-3xl font-semibold mt-6 mb-3;
+    @apply text-3xl font-semibold mt-6 mb-3 font-sans;
   }
   .prose h3 {
-    @apply text-2xl font-semibold mt-4 mb-2;
+    @apply text-2xl font-semibold mt-4 mb-2 font-sans;
   }
   .prose p {
     @apply my-4;
