@@ -21,14 +21,13 @@ export default async function IndexPage() {
         </div>
       </section>
 
+      <h3 className="text-4xl font-bold mb-8">See my Blogs!</h3>
       <iframe
         src="https://jothishjj.substack.com/embed"
-        width="480"
+        width="680"
         height="320"
       >
       </iframe>
-
-      <h3 className="text-4xl font-bold mb-8">See my Blogs!</h3>
     </main>
   );
 }
